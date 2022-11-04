@@ -98,7 +98,9 @@ function App() {
         accept="image/png, image/jpeg, image/gif"
         onChange={imageHandler}
       ></input>
-      <img id="preview" src="" width="100%"></img>
+      <div>
+        <img id="preview" src="" width="50%"></img>
+      </div>
       <div>
         <table>
           <tbody>{TableList()}</tbody>
