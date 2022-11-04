@@ -93,6 +93,7 @@ function App() {
 
   return (
     <div className="App">
+      <h1>MobileNet Inference</h1>
       <input
         type="file"
         accept="image/png, image/jpeg, image/gif"
