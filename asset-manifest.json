@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/apps_tensorflowjs/static/css/main.073c9b0a.css",
+    "main.js": "/apps_tensorflowjs/static/js/main.5d11912b.js",
+    "static/js/787.581ee43f.chunk.js": "/apps_tensorflowjs/static/js/787.581ee43f.chunk.js",
+    "index.html": "/apps_tensorflowjs/index.html",
+    "main.073c9b0a.css.map": "/apps_tensorflowjs/static/css/main.073c9b0a.css.map",
+    "main.5d11912b.js.map": "/apps_tensorflowjs/static/js/main.5d11912b.js.map",
+    "787.581ee43f.chunk.js.map": "/apps_tensorflowjs/static/js/787.581ee43f.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.073c9b0a.css",
+    "static/js/main.5d11912b.js"
+  ]
+}
