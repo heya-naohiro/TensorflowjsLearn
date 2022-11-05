@@ -10,6 +10,7 @@ function CameraInference() {
   >();
   const videoRef = useRef<HTMLVideoElement>(null);
   const [service, setService] = useState<TFService | null>(null);
+  const [frameCount, setFrameCount] = useState(0);
   //const [fps, setFps] = useState(0);
 
   useEffect(() => {
@@ -32,7 +33,11 @@ function CameraInference() {
 
         if (video) {
           video.srcObject = stream;
-          service?.inferenceFromVideoStart(video, setClassifyResult);
+          service?.inferenceFromVideoStart(
+            video,
+            setClassifyResult,
+            setFrameCount
+          );
         }
       })
       .catch((err) => {
@@ -64,6 +69,7 @@ function CameraInference() {
       </div>
       <div>
         <table>
+          {frameCount}
           <tbody>{TableList()}</tbody>
         </table>
       </div>

@@ -32,15 +32,17 @@ export class TFService {
         className: string;
         probability: number;
       }>
-    ) => void
+    ) => void,
+    setFrameCount: React.Dispatch<React.SetStateAction<number>>
   ) {
     const webcam = await tf.data.webcam(webcamElement);
 
     while (true) {
       const img = await webcam.capture();
-      if (this.model && img) {
+      if (this.model) {
         const result = await this.model.classify(img);
         stateChange(result);
+        setFrameCount((prev) => prev + 1);
       }
 
       img.dispose();
