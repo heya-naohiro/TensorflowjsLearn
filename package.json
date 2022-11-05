@@ -27,13 +27,14 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "cross-env PUBLIC_URL=/apps_tensorflowjs react-scripts build",
+    "build": "react-scripts build",
     "test": "jest",
     "watch": "jest --watchAll",
     "lint": "eslint .",
     "fix": "eslint --fix",
     "eject": "react-scripts eject",
-    "deploy": "yarn build && gh-pages -d build"
+    "deploy": "yarn build && gh-pages -d build",
+    "postbuild": "cp build/index.html build/404.html"
   },
   "eslintConfig": {
     "extends": [

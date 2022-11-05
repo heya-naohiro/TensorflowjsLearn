@@ -7,13 +7,21 @@ import CameraInference from "CameraInference";
 
 function App() {
   return (
-    <BrowserRouter basename={process.env.PUBLIC_URL}>
-      <Routes>
-        <Route path={"/"} element={<PictureInference />} />
-        <Route path={"/mobilenet"} element={<PictureInference />} />
-        <Route path={"/mobilenet_camera"} element={<CameraInference />} />
-      </Routes>
-    </BrowserRouter>
+    <>
+      <BrowserRouter>
+        <Routes>
+          <Route path={"/apps_tensorflowjs/"} element={<PictureInference />} />
+          <Route
+            path={"/apps_tensorflowjs/mobilenet"}
+            element={<PictureInference />}
+          />
+          <Route
+            path={"/apps_tensorflowjs/mobilenet_camera"}
+            element={<CameraInference />}
+          />
+        </Routes>
+      </BrowserRouter>
+    </>
   );
 }
 

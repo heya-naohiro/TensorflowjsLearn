@@ -1,3 +1,4 @@
+import { env } from "process";
 import React, { useEffect, useState, useRef } from "react";
 import { TFService } from "./service/TFService";
 
@@ -12,6 +13,7 @@ function CameraInference() {
   const [service, setService] = useState<TFService | null>(null);
 
   useEffect(() => {
+    console.log(process.env.REACT_APP_ROUTE_ENV);
     TFService.loadModel().then((service) => {
       setService(service);
       console.log("service, setted");
@@ -60,7 +62,6 @@ function CameraInference() {
   return (
     <div className="CameraInference">
       <div>
-        {" "}
         <video ref={videoRef}></video>
       </div>
       <div>

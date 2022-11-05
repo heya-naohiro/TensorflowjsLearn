@@ -12,6 +12,7 @@ function PictureInference() {
   const [service, setService] = useState<TFService | null>(null);
   const [flag, setFlag] = useState(false);
   useEffect(() => {
+    console.log(process.env.REACT_APP_ROUTE_ENV);
     TFService.loadModel().then((service) => {
       setService(service);
       console.log("service, setted");
@@ -91,6 +92,7 @@ function PictureInference() {
   return (
     <div className="PictureInference">
       <h1>MobileNet Inference</h1>
+      <div>{process.env.ROUTE_ENV}</div>
       <input
         type="file"
         accept="image/png, image/jpeg, image/gif"
