@@ -1,4 +1,3 @@
-import { env } from "process";
 import React, { useEffect, useState, useRef } from "react";
 import { TFService } from "./service/TFService";
 
@@ -11,12 +10,11 @@ function CameraInference() {
   >();
   const videoRef = useRef<HTMLVideoElement>(null);
   const [service, setService] = useState<TFService | null>(null);
+  //const [fps, setFps] = useState(0);
 
   useEffect(() => {
-    console.log(process.env.REACT_APP_ROUTE_ENV);
     TFService.loadModel().then((service) => {
       setService(service);
-      console.log("service, setted");
     });
   }, []);
 
@@ -24,16 +22,16 @@ function CameraInference() {
     if (service && videoRef) {
       getVideo();
     }
-  }, [videoRef, service]);
+  }, [service]);
 
   const getVideo = () => {
     navigator.mediaDevices
       .getUserMedia({ video: true })
       .then((stream) => {
         const video = videoRef.current;
+
         if (video) {
           video.srcObject = stream;
-          video.play();
           service?.inferenceFromVideoStart(video, setClassifyResult);
         }
       })
@@ -62,7 +60,7 @@ function CameraInference() {
   return (
     <div className="CameraInference">
       <div>
-        <video ref={videoRef}></video>
+        <video ref={videoRef} playsInline autoPlay></video>
       </div>
       <div>
         <table>

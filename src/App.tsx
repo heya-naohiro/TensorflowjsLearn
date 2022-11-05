@@ -10,7 +10,7 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
-          <Route path={"/apps_tensorflowjs/"} element={<PictureInference />} />
+          <Route path={"/apps_tensorflowjs/"} element={<CameraInference />} />
           <Route
             path={"/apps_tensorflowjs/mobilenet"}
             element={<PictureInference />}
