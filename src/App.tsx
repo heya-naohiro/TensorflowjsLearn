@@ -7,11 +7,11 @@ import CameraInference from "CameraInference";
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
       <Routes>
-        <Route path="/" element={<PictureInference />} />
-        <Route path="/mobilenet" element={<PictureInference />} />
-        <Route path="/mobilenet_camera" element={<CameraInference />} />
+        <Route path={"/"} element={<PictureInference />} />
+        <Route path={"/mobilenet"} element={<PictureInference />} />
+        <Route path={"/mobilenet_camera"} element={<CameraInference />} />
       </Routes>
     </BrowserRouter>
   );

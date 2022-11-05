@@ -1,6 +1,7 @@
 {
   "name": "tf-application",
   "version": "0.1.0",
+  "homepage": "https://heya-naohiro.github.io/apps_tensorflowjs",
   "private": true,
   "dependencies": {
     "@tensorflow-models/mobilenet": "^2.1.0",
